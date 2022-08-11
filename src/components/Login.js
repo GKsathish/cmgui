@@ -55,7 +55,7 @@ function Login() {
      
     };
     console.log(regbodydata);
-    const senddatatoregapi = await fetch("http://172.22.9.76:9011/loginapi", {
+    const senddatatoregapi = await fetch("http://172.10.70.140:9011/loginapi", {
       method: "POST",
       body: JSON.stringify(regbodydata),
       headers: {

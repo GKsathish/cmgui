@@ -1,26 +1,3 @@
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import Block from './components/Block'
-// import Unblock from './components/Unblock'
-// import Login from "./components/Login";
-// import "./App.css";
-
-// function App() {
-//   return (
-//     <>
-//       <BrowserRouter>
-//         <Routes>
-//           <Route exact path="/" Exact element={<Login />} />
-//           <ROute exact path="/Block" element ={<Block/>}/>
-//           <ROute exact path="/Unblock" element ={<Unblock/>}/>
-//           <Route exact path="/Registation" element={<Registation />} />
-//         </Routes>
-//       </BrowserRouter>
-//     </>
-//   );
-// }
-// export default App;
-
-
 import React from "react";
 import { useState } from "react";
 
@@ -45,8 +22,8 @@ const Registation = () => {
     e.preventDefault();
     var date = "08-08-2022";
     const regbodydata = {
-      username: formdata.username.toString(),
-      password: formdata.password.toString(),
+      username: formdata.username,
+      password: formdata.password,
       first_name: formdata.first_name.toString(),
       last_name: formdata.last_name.toString(),
       role_id: formdata.role.toString(),
@@ -56,8 +33,10 @@ const Registation = () => {
       service_key: "GUI",
       mobile_number: formdata.mobilenumber.toString(),
     };
+
+  
     console.log(regbodydata);
-    const senddatatoregapi = await fetch("http://172.22.9.54:9011/registor", {
+    const senddatatoregapi = await fetch("http://172.22.9.76:9011/registor", {
       method: "POST",
       body: JSON.stringify(regbodydata),
       headers: {
@@ -233,6 +212,7 @@ const Registation = () => {
                       />
                     </div>
                   </div>
+                  
                   <center>
                     <button
                       type="submit"
@@ -253,3 +233,6 @@ const Registation = () => {
   );
 };
 export default Registation;
+
+
+
