@@ -121,7 +121,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import ReactHtmlTableToExcel from "react-html-table-to-excel";
 import filterFactory, { textFilter } from "react-bootstrap-table2-filter";
 import BootstrapTable from "react-bootstrap-table-next";
-import "bootstrap/dist/css/bootstrap.min.css";
+  import "bootstrap/dist/css/bootstrap.min.css";
 import paginationfactory from "react-bootstrap-table2-paginator";
 import "react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.min.css";
 import "react-bootstrap-table2-filter/dist/react-bootstrap-table2-filter.min.css";

@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react";
+  import Moment from 'moment';
+ import DatePicker from 'react-datepicker';
 
 const Registation = () => {
   const [formdata, setformData] = useState({
@@ -20,7 +22,11 @@ const Registation = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    var date = "08-08-2022";
+    // var date = Moment(formdata.dob.toString()).format('DD-MM-YYYY');
+  
+    var date = new Date(formdata.dob);
+    var dob=Moment(date).format('DD-MM-YYYY');
+
     const regbodydata = {
       username: formdata.username,
       password: formdata.password,
@@ -29,14 +35,14 @@ const Registation = () => {
       role_id: formdata.role.toString(),
       email: formdata.email.toString(),
       gender: formdata.gender.toString(),
-      dob: date.toString(),
+      dob: dob.toString().slice(0,10),
       service_key: "GUI",
       mobile_number: formdata.mobilenumber.toString(),
     };
 
   
     console.log(regbodydata);
-    const senddatatoregapi = await fetch("http://172.22.9.76:9011/registor", {
+    const senddatatoregapi = await fetch("http://172.10.70.140:9011/registor", {
       method: "POST",
       body: JSON.stringify(regbodydata),
       headers: {
@@ -186,10 +192,10 @@ const Registation = () => {
                       Date of Birth
                     </label>
                     <div className="col-sm-10">
-                      <input
-                        type="date"
+                      <input type="date"
+                     
                         className="form-control"
-                        name="DOB"
+                        name="dob"
                         onChange={changeHandler}
                       />
                     </div>

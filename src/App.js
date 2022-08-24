@@ -3,6 +3,7 @@ import Registation from "./components/Registation";
 import Update from "./components/Update";
 import Login from "./components/Login";
 import Block from "./components/Block";
+import Bulk from "./components/Bulk";
 import UserProfile from "./components/UserProfile";
 
 import "./App.css";
@@ -13,6 +14,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route exact path="/"  element={<Login />} />
+          <Route exact path="/Bulk" element={<Bulk/>}/>
           <Route exact path="/UserProfile" element ={<UserProfile/>}/>
           <Route exact path="/Block"  element={<Block />} />
           <Route exact path="/Update"  element={<Update />} />
