@@ -3,8 +3,7 @@ import { useState, useEffect } from "react";
 import Moment from "moment";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
-import Header from "./Header";
-import SideMenu from "./SideMenu";
+
 const UserProfile = () => {
   var usernameedit = sessionStorage.getItem("uname");
   const [editdata, setEditdata] = useState([{}]);
@@ -121,8 +120,7 @@ const UserProfile = () => {
 
   return (
     <>
-      <Header />
- <SideMenu />
+ 
       <section className="section">
         <div className="row">
           <center className="p-5 m-5">

@@ -1,5 +1,6 @@
 import React from 'react'
 import {useState} from 'react'
+import {Scrollbars} from 'react-custom-scrollbars'
 
 const Block = () => {
   
@@ -39,7 +40,8 @@ const Block = () => {
     
       return (
         <>
-          <section className="section">
+         <Scrollbars  style={{height:500,width:500}}>
+         <section className="section">
             <div className="row">
               <center className="p-5 my-5">
               <div className="col-lg-6">
@@ -103,6 +105,7 @@ const Block = () => {
               </center>
             </div>
           </section>
+         </Scrollbars>
         </>
       );
   
